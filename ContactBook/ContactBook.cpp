@@ -26,7 +26,7 @@ ContactBook::ContactBook() {
     curr_size = 0;
 }
 
-Contact *ContactBook::Find(string x) {
+Contact* ContactBook::Find(string x) {
     for (int i = 0; i < curr_size; i++) {
         if (contact[i]->getName() == x) {
             return contact[i];
@@ -68,7 +68,6 @@ void ContactBook::Remove(Contact contact2) {
     for (int i = j; i < curr_size; i++) {
         contact[i] = contact[i+1];
     }
-    //contact[curr_size] = nullptr;
     curr_size--;
 }
 
@@ -103,30 +102,24 @@ void ContactBook::operator-=(Contact &contact3) {
 
 void ContactBook::operator+=(ContactBook &myContacts) {
     vector<Contact*> book;
-    cout << myContacts.contact << endl;
     for (int i = 0; i < myContacts.curr_size; i++) {
         book.push_back(myContacts.contact[i]);
-        cout << myContacts.contact[i] << endl;
-    }
-    cout << book.size() << endl;
-    for(int j = 0; book.size(); j++) {
-            //cout << book[i]->getName() << endl;
     }
     this->AddContacts(book);
 }
 
-
 void ContactBook::operator-=(ContactBook &books) {
     for (int i = 0; i < this->curr_size; i++) {
-        books.contact[i] = nullptr;
-        books.curr_size = 0;
-    }
+            books.contact[i] = nullptr;
+            books.curr_size = 0;
+        }
 }
 
 bool ContactBook::operator==(ContactBook book) {
     bool var = true;
     for (int i = 0; i < book.curr_size; i++) {
-        if (book.contact[i] == this->Find(book.contact[i]->getName()) and book.contact[i] == this->Find(book.contact[i]->getNumber()))  {
+        if (book.contact[i] == this->Find(book.contact[i]->getName())
+        and book.contact[i] == this->Find(book.contact[i]->getNumber()))  {
             continue;
         } else {
             var = false;
@@ -136,11 +129,11 @@ bool ContactBook::operator==(ContactBook book) {
     return var;
 }
 
-
 bool ContactBook::operator!=(ContactBook book) {
     bool var = false;
     for (int i = 0; i < book.curr_size; i++) {
-        if (book.contact[i] == this->Find(book.contact[i]->getName()) and book.contact[i] == this->Find(book.contact[i]->getNumber()))  {
+        if (book.contact[i] == this->Find(book.contact[i]->getName())
+        and book.contact[i] == this->Find(book.contact[i]->getNumber()))  {
             continue;
         } else {
             var = true;
@@ -204,3 +197,7 @@ for (int i = 0; i < k; i++) {
 }
 }
 */
+
+
+
+

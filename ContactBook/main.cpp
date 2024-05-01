@@ -97,8 +97,8 @@ int main() {
     myContacts += Albert;
     myContacts += John;
     //cout << "before" << endl;
-    //myContacts.Display();
-    myContacts -= myContacts;
+    myContacts.Display();
+    //myContacts -= myContacts;
     //cout << "after" << endl;
     //myContacts.Display();
 
@@ -115,10 +115,9 @@ int main() {
     raj += Albert;
     //raj.Display();
 
+    ContactBook book;
     aarithi += myContacts;
     aarithi.Display();
-
-    ContactBook book;
     if (raj != aarithi) {
         cout << "not the same" << endl;
     } else {
